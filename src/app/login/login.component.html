@@ -1,0 +1,26 @@
+<div class="body">
+    <div class="container">
+        <form action="#">
+            <h2>Login</h2>
+            <div class="input-field">
+                <input type="text" id="username" name="username" [(ngModel)]="loginObj.username" required />
+                <label for="username">User Name</label>
+            </div>
+            <div class="input-field">
+                <input type="password" id="password" name="password" [(ngModel)]="loginObj.password" required />
+                <label>Enter password</label>
+            </div>
+            <div class="forget">
+                <label for="Save-login">
+                    <input type="checkbox" id="Save-login" />
+                    <p>Save login information</p>
+                </label>
+                <a href="#">Forgot password?</a>
+            </div>
+            <button type="submit" (click)="onLogin()">Log In</button>
+            <div class="Create-account">
+                <p>Don't have an account? <a href="#">Create account</a></p>
+            </div>
+        </form>
+    </div>
+</div>

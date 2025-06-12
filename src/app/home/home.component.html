@@ -1,0 +1,153 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<!-- SIDEBAR -->
+<!-- SIDEBAR -->
+
+<!-- CONTENT -->
+<section id="content">
+    <!-- MAIN -->
+    <main>
+        <div class="head-title">
+            <div class="left">
+                <h1>Over View</h1>
+                <ul class="breadcrumb">
+                    <li>
+                        <a>Dashboard</a>
+                    </li>
+                    <li><i class='bx bx-chevron-right'></i></li>
+                    <li>
+                        <a class="active">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <ul class="box-info">
+            <li>
+                <i class='bx bxs-shopping-bag-alt bx-sm'></i>
+                <span class="text">
+                    <h3>{{totalproducts}}</h3>
+                    <p>Total Products</p>
+                </span>
+            </li>
+            <li>
+                <i class='bx bxs-dollar-circle'></i>
+                <span class="text">
+                    <h3>{{totalCategory}}</h3>
+                    <p>Category</p>
+                </span>
+            </li>
+            <li>
+                <i class='bx bxs-group'></i>
+                <span class="text">
+                    <h3>{{totalUsers}}</h3>
+                    <p>Total Users</p>
+                </span>
+            </li>
+        </ul>
+
+        <div class="table-data">
+            <div class="order" style="position: sticky; top: 0; left: 0; right: 0;">
+                <div class="head">
+                    <h3>Users</h3>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Email</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of Indexusers">
+                            <td>
+                                <img src="https://placehold.co/600x400/png">
+                                <p>{{item.userName}}</p>
+                            </td>
+                            <td>{{item.email}}</td>
+                            <td><span class="status completed">{{item.lockoutEnabled}}</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="order">
+                <div class="head">
+                    <h3>Products</h3>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let product of products">
+                            <td>
+                                <p>{{product.name}}</p>
+                            </td>
+                            <td>{{product.categoryName}}</td>
+                            <td><span class="status completed">{{product.price}}</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <!-- MAIN -->
+</section>
+<!-- CONTENT -->
+
+<!-- <div class="modal" #myModal>
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+    
+                    <button type="button" (click)="closeModal()" class="btn-close"></button>
+                    <div class="modal-header">
+                        <h2 class="text-center ml-5">Add new item</h2>
+                    </div>
+                    <form [formGroup]="productForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" formControlName="name" class="form-control"
+                                placeholder="Eg. Business Consulting" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Select category</label>
+                            <select formControlName="category" class="form-select" *ngFor="let Cat of Category">
+                                <option value="Mobile">{{Cat.name}}</option>
+                            </select>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="price">Price</label>
+                            <input type="number" id="price" formControlName="price" class="form-control"
+                                placeholder="Enter amount" required>
+                        </div>
+                        <div class="button-group">
+                            <button type="button" (click)="closeModal()" class="cancel-button"
+                                id="cancelButton">Cancel</button>
+                            </div>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+
+
+<!-- @if (this.products.controls['productId'].value==0) {
+        <button type="submit" class="add-button">Add item</button>
+        }@else {
+        <button type="submit" class="add-button">Update item</button>
+        } -->

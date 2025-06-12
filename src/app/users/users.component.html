@@ -1,0 +1,66 @@
+<link href='//fonts.googleapis.com/css?family=Roboto:100,400,300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<div class="overflow" style="overflow: auto;">
+    <div class="quiz-window">
+        <!-- <div class="guiz-awards-buttons"><button (click)="getAllUsers()" class="guiz-awards-but-back">Back</button></div> -->
+        <div class="quiz-window-header">
+            <div class="quiz-window-title">All Users <br>
+                <button class="btn btn-outline-secondary btn-primary add" style="color: white;"
+                    (click)="openModal()">Add
+                    User</button>
+            </div>
+            <!-- <button class="quiz-window-close">&times;</button> -->
+
+        </div>
+        <div class="quiz-window-body">
+            <div class="gui-window-awards">
+                <ul class="guiz-awards-row guiz-awards-header">
+                    <!-- <li class="guiz-awards-header-star"><i class="fa fa-star" aria-hidden="true"></i></li> -->
+                    <li class="guiz-awards-header-title">Name</li>
+                    <li class="guiz-awards-header-track">This Track</li>
+                    <li class="guiz-awards-header-time">All Time</li>
+                    <li class="guiz-awards-header-star">Actions</li>
+                </ul>
+                <ul class="guiz-awards-row guiz-awards-row-even" *ngFor="let User of Indexusers">
+                    <!-- <li class="guiz-awards-star"><span class="star goldstar"></span></li> -->
+                    <li class="guiz-awards-title">{{User.userName}}
+                        <div class="guiz-awards-subtitle">90-100% correct answers</div>
+                    </li>
+                    <li class="guiz-awards-track">{{User.email}}</li>
+                    <li class="guiz-awards-time">{{User.lockoutEnabled}}</li>
+                    <li>
+                        <button class="btn btn-danger m-2" (click)="deleteUser(User.id)">Delete</button>
+                        <button class="btn btn-primary m-2" (click)="openModal()">Edit</button>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <div class="container modal" id="container" #myModal>
+        <!-- Sign Up Form -->
+        <div class="form-container sign-in-container">
+            <form action="#" [formGroup]="UserForm">
+                <div class="close-button">
+                    <i class="fa fa-close" aria-hidden="true" (click)="closeModal()"></i>
+                </div>
+                <h1 *ngIf="!UserForm.controls['userName']?.value">Add User 🚀</h1>
+                <h1 *ngIf="UserForm.controls['userName']?.value"> Update User</h1>
+                <span>or use your email for registration</span>
+                <input type="text" id="userName" class="Form-control" formControlName="userName" placeholder="👤 Name" required />
+                <input type="email" id="email" class="form-control" formControlName="Email" placeholder="📧 Email" required />
+                <input type="password" id="Password" class="form-control" formControlName="Password" placeholder="🔒 Password" required />
+                <div class="button-group">
+                    <button *ngIf="!UserForm.controls['userName']?.value" type="submit" class="add-button"
+                        (click)="AddUser()">Add User</button>
+                    <button *ngIf="UserForm.controls['userName']?.value" type="submit" class="add-button"
+                        (click)="AddUser()">Update User</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

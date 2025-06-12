@@ -1,0 +1,39 @@
+<link href='//fonts.googleapis.com/css?family=Roboto:100,400,300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<section id="content">
+    <!-- MAIN -->
+    <main>
+        <div class="table-data">
+            <div class="order">
+                <div class="head" style="text-align: center;">
+                    <h3>Products</h3>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let product of products">
+                            <td>
+                                <p>{{product.name}}</p>
+                            </td>
+                            <td>{{product.categoryName}}</td>
+                            <td><span class="status completed">{{product.price}}</span></td>
+                            <td>
+                                <button class="btn btn-danger m-2" (click)="deleteProducts(product.id)">Delete</button>
+                            </td>
+                            <td>
+                                <button class="btn btn-primary m-2">Edit</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <!-- MAIN -->
+</section>

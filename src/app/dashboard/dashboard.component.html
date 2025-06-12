@@ -1,0 +1,107 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<section id="sidebar">
+    <a routerLink="/home" class="brand">
+        <i class='bx bxs-smile  bx-lg'></i>
+        <span class="text">EcomVerse</span>
+    </a>
+    <ul class="side-menu top" style="cursor: pointer;">
+        <li class="active" routerLink="/dashboard/home">
+            <a>
+                <i class='bx bxs-dashboard bx-sm'></i>
+                <span class="text">Home</span>
+            </a>
+        </li>
+        <li routerLink="/dashboard/users">
+            <a>
+                <i class='bx bxs-group bx-sm'></i>
+                <span class="text">Users</span>
+            </a>
+        </li>
+        <li routerLink="/dashboard/products">
+            <a>
+                <i class='bx bxs-shopping-bag-alt bx-sm'></i>
+                <span class="text">Products</span>
+            </a>
+        </li>
+        <li>
+            <a>
+                <i class='bx bxs-message-dots bx-sm'></i>
+                <span class="text">Message</span>
+            </a>
+        </li>
+        <li>
+            <a>
+                <i class='bx bxs-doughnut-chart bx-sm'></i>
+                <span class="text">Team</span>
+            </a>
+        </li>
+    </ul>
+    <ul class="side-menu bottom" style="cursor: pointer;">
+        <li>
+            <a>
+                <i class='bx bxs-cog bx-sm bx-spin-hover'></i>
+                <span class="text">Settings</span>
+            </a>
+        </li>
+        <li>
+            <a class="logout" (click)="logout()">
+                <i class='bx bx-power-off bx-sm bx-burst-hover'></i>
+                <span class="text">Logout</span>
+            </a>
+        </li>
+    </ul>
+</section>
+<section id="content">
+    <!-- NAVBAR -->
+    <nav>
+        <i class='bx bx-menu bx-sm'></i>
+        <!-- <a href="" class="nav-link">EcomVerse</a> -->
+        <form action="#">
+            <!-- <div class="form-input">
+                <input type="search" placeholder="Search...">
+                <button type="submit" class="search-btn"><i class='bx bx-search'></i></button>
+            </div> -->
+        </form>
+        <input type="checkbox" class="checkbox" id="switch-mode" hidden />
+        <!-- <label class="swith-lm" for="switch-mode">
+            <i class="bx bxs-moon"></i>
+            <i class="bx bx-sun"></i>
+            <div class="ball"></div>
+        </label> -->
+
+        <!-- Notification Bell -->
+        <a class="notification" id="notificationIcon">
+            <i class='bx bxs-bell bx-tada-hover'></i>
+            <span class="num">4</span>
+        </a>
+        <div class="notification-menu" id="notificationMenu">
+            <ul>
+                <li>New message from John</li>
+                <li>Your order has been shipped</li>
+                <li>New comment on your post</li>
+                <li>Update available for your app</li>
+            </ul>
+        </div>
+
+        <!-- Profile Menu -->
+        <a class="profile" id="profileIcon">
+            <img src="https://placehold.co/600x400/png" alt="Profile">
+        </a>
+        <div class="profile-menu" id="profileMenu" style="cursor: pointer;">
+            <ul>
+                <li><a>My Profile</a></li>
+                <li><a>Settings</a></li>
+                <li><a (click)="logout()">Log Out</a></li>
+            </ul>
+        </div>
+    </nav>
+    <router-outlet></router-outlet>
+</section>
